@@ -1,16 +1,11 @@
-import { name, version } from '../package.json';
-import Router from 'koa-router';
+import Router from "koa-router";
+import { healthcheck } from "./modules/health/health";
 
 const router = new Router();
 
 /**
  * GET /
  */
-router.get('/', async ctx => {
-  ctx.body = {
-    app: name,
-    version: version
-  };
-});
+router.get("/", healthcheck);
 
 export default router;
