@@ -12,8 +12,10 @@
         "prestart": "npm run -s build",
         "start": "node dist/index.js",
         "dev": "nodemon src/index.js --exec \"node -r dotenv/config -r @babel/register\"",
+        "dev-debug": "nodemon  --exec \"babel-node src/index\"",
         "clean": "rimraf dist",
         "build": "npm run clean && mkdir -p dist && babel src -s -D -d dist",
+        "build-debug": "babel src -d dist --source-maps",
         "test": "jest",
         "lint": "esw -w src test"
     },
@@ -42,18 +44,20 @@
         "rimraf": "^3.0.0"
     },
     "devDependencies": {
+        "@babel/node": "^7.10.5",
+        "@babel/plugin-transform-modules-commonjs": "^7.10.4",
         "@babel/register": "^7.0.0",
         "@types/jest": "^26.0.13",
         "babel-core": "7.0.0-bridge.0",
         "babel-eslint": "^10.0.3",
-        "babel-jest": "^24.9.0",
+        "babel-jest": "^26.3.0",
         "dotenv": "^8.2.0",
         "eslint": "^6.6.0",
         "eslint-plugin-import": "^2.18.2",
         "eslint-plugin-jest": "^23.0.4",
         "eslint-watch": "^6.0.1",
-        "jest": "^24.9.0",
-        "nodemon": "^1.19.4",
+        "jest": "^26.4.2",
+        "nodemon": "^2.0.4",
         "supertest": "^4.0.2"
     },
     "babel": {
@@ -68,6 +72,7 @@
             ]
         ],
         "plugins": [
+            "@babel/plugin-transform-modules-commonjs",
             "@babel/plugin-proposal-object-rest-spread"
         ],
         "sourceMaps": true,

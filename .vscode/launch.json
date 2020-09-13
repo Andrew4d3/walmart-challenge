@@ -16,11 +16,13 @@
          "disableOptimisticBPs": true
       },
       {
+         "name": "Launch",
          "type": "node",
          "request": "launch",
-         "name": "Launch Program",
-         "skipFiles": ["<node_internals>/**"],
-         "program": "${workspaceFolder}/dist/index.js"
+         "program": "${workspaceRoot}/src/index.js",
+         "runtimeArgs": ["-r", "dotenv/config"],
+         "preLaunchTask": "build",
+         "outFiles": ["${workspaceRoot}/dist/**/*.js"]
       }
    ]
 }
