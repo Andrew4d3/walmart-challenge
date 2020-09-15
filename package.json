@@ -11,6 +11,8 @@
     "scripts": {
         "prestart": "npm run -s build",
         "start": "node dist/index.js",
+        "docker-build": "docker build -t walmart-challenge .",
+        "docker-start": "docker container run --network=host --rm --env-file ./.env -p 8080:8080 walmart-challenge",
         "dev": "nodemon src/index.js --exec \"node -r dotenv/config -r @babel/register\"",
         "dev-debug": "nodemon  --exec \"babel-node src/index\"",
         "clean": "rimraf dist",
