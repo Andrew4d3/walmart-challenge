@@ -31,12 +31,10 @@ export function countProductsByQuery(
    return collection.countDocuments(query);
 }
 
-// Pending to unit test
-export function buildQuery(queryString) {
+export function buildQuery({ search }) {
    let query = {};
-   const { search } = queryString;
 
-   if (search && search.length > 0) {
+   if (search && search.length) {
       query.$or = [
          { brand: new RegExp(search) },
          { description: new RegExp(search) },
@@ -46,7 +44,6 @@ export function buildQuery(queryString) {
    return query;
 }
 
-// Pending to unit test
 export const buildResponseBody = (
    totalResults,
    currentPage,
@@ -59,7 +56,6 @@ export const buildResponseBody = (
    products,
 });
 
-// Pending to unit test
 export const setDiscountPrice = (product) => ({
    ...product,
    discount: {
@@ -68,11 +64,9 @@ export const setDiscountPrice = (product) => ({
    },
 });
 
-// Pending to unit test
-export const isPalindrom = (value) =>
-   value.length && `${value}`.split("").reverse().join("") == value;
+export const verifyPalindrom = (value = "") =>
+   `${value}`.length && `${value}`.split("").reverse().join("") == value;
 
-// Pending to unit test
 export function setDiscountPriceToList(body) {
    const productsWithDiscount = body.products.map(setDiscountPrice);
 
@@ -90,7 +84,7 @@ export async function findOne(ctx) {
       return ctx.throw(404, "Product not found");
    }
 
-   if (isPalindrom(id)) {
+   if (verifyPalindrom(id)) {
       product = setDiscountPrice(product);
    }
 
@@ -121,7 +115,7 @@ export async function list(ctx) {
       limit
    );
 
-   if (isPalindrom(query.search)) {
+   if (verifyPalindrom(query.search)) {
       responseBody = setDiscountPriceToList(responseBody);
    }
 

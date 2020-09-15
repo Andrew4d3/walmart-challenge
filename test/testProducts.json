@@ -1,21 +1,21 @@
 [
     {
         "id": 1,
-        "brand": "ooy eqrceli",
+        "brand": "cbc eqrceli",
         "description": "ccbbd aabb",
         "image": "www.lider.cl/catalogo/images/whiteLineIcon.svg",
         "price": 498724
     },
     {
         "id": 2,
-        "brand": "aabb",
+        "brand": "aabb cbc",
         "description": "zlrwax bñyrh",
         "image": "www.lider.cl/catalogo/images/babyIcon.svg",
         "price": 130173
     },
     {
         "id": 3,
-        "brand": "ccbbd",
+        "brand": "dde ffe",
         "description": "aaaa qacirk",
         "image": "www.lider.cl/catalogo/images/homeIcon.svg",
         "price": 171740
@@ -23,7 +23,7 @@
     {
         "id": 4,
         "brand": "sjlzxeo",
-        "description": "pnyn aabb",
+        "description": "dde ffe",
         "image": "www.lider.cl/catalogo/images/computerIcon.svg",
         "price": 890348
     },
@@ -36,7 +36,7 @@
     },
     {
         "id": 6,
-        "brand": "aabb onfbtya",
+        "brand": "aabsb onfbtya",
         "description": "vangde oswss",
         "image": "www.lider.cl/catalogo/images/homeIcon.svg",
         "price": 468750
@@ -64,6 +64,13 @@
     },
     {
         "id": 10,
+        "brand": "adsfsda",
+        "description": "dñqy ipvukesh",
+        "image": "www.lider.cl/catalogo/images/smartphoneIcon.svg",
+        "price": 500000
+    },
+    {
+        "id": 11,
         "brand": "adsfsda",
         "description": "dñqy ipvukesh",
         "image": "www.lider.cl/catalogo/images/smartphoneIcon.svg",
