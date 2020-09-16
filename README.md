@@ -2,7 +2,17 @@
 
 This is a Koa 2 Project
 
+## Requirements
+- Node JS 12.8.3
+- Docker (for deployment)
+
 ## Run for development
+
+First, install dependencies:
+
+```bash
+npm install
+```
 
 Create an `.env` file with Mongo URI. Example:
 
